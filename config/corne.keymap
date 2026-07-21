@@ -8,7 +8,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 
 /* El override de &nice_view_spi (CS del display) se movio a config/corne_left.overlay,
  * porque el lado derecho ya no incluye el shield nice_view. */
@@ -161,7 +160,7 @@
 //         SHFT         | SHFT| LWR | CTRL |   | SPAC | RSE  | ALT |
 //  0
                         bindings = <
-   &kp ESC   &mmv MOVE_RIGHT &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P         &kp BSPC
+   &kp ESC   &kp Q       &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P         &kp BSPC
    &kp TAB   &kp A       &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SQT       &kp SQT
    &kp LSHFT &mt LSHFT Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp RSHFT     &mt RSHFT RET
        &kp LGUI &lt 3 SPACE &mt LCTRL RET    &lt 1 SPACE &lt 2 BSPC &mt RALT DEL
