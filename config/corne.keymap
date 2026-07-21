@@ -202,7 +202,7 @@
 //                          |BTCLR    |     |     |     |   |      |      |
 // 3
                         bindings = <
- &out OUT_USB &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI   &rgb_ug RGB_SPI &rgb_ug RGB_COLOR_HSB(180,100,5)        &rgb_ug RGB_COLOR_HSB(180,100,2)  &kp F7   &kp F8  &kp F9  &kp F10  &none
+ &none   &out OUT_USB       &rgb_ug RGB_SAI  &rgb_ug RGB_BRI   &rgb_ug RGB_SPI &rgb_ug RGB_COLOR_HSB(180,100,5)        &rgb_ug RGB_COLOR_HSB(180,100,2)  &kp F7   &kp F8  &kp F9  &kp F10  &none
  &none   &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD   &rgb_ug RGB_SPD &rgb_ug RGB_COLOR_HSB(300,100,5)        &rgb_ug RGB_COLOR_HSB(300,100,2)  &kp F4   &kp F5  &kp F6  &kp F11  &none
  &none   &bt0_rgb         &bt1_rgb         &bt2_rgb          &bt3_rgb        &bt4_rgb                                &kp SEMI                          &kp F1   &kp F2  &kp F3  &kp F13  &none
                                            &bt BT_CLR        &trans          &rgb_ug RGB_TOG                         &trans                            &trans   &trans
