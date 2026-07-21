@@ -58,8 +58,8 @@
         force-awake;
         /* Ajustar orientacion segun el montaje real del PCB: */
         // swap-xy;
-        // invert-x;
-        // invert-y;
+        invert-x;
+        invert-y;
     };
 };
 
