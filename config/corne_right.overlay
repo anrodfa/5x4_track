@@ -14,6 +14,7 @@
  */
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include "corne_trackball.dtsi"
 &pro_micro_i2c {
     status = "disabled";
 };
@@ -61,9 +62,7 @@
     };
 };
 
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-    };
+/* La derecha reenvia los eventos del sensor a la central mediante BLE split. */
+&trackball_split {
+    device = <&trackball>;
 };
