@@ -24,3 +24,4 @@ include:
   # Lado derecho: SOLO trackball, sin display (nice!view retirada de este lado)
   - board: nice_nano//zmk
     shield: corne_right
+    snippet: zmk-usb-logging
