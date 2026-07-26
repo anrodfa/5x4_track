@@ -4,6 +4,13 @@
  */
 
 / {
+    behaviors {
+        pmwcpi: pmwcpi {
+            compatible = "zmk,behavior-pmw-cpi";
+            #binding-cells = <2>;
+        };
+    };
+
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -20,3 +27,4 @@
         device = <&trackball_split>;
     };
 };
+
