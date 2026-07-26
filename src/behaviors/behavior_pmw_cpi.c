@@ -9,7 +9,7 @@
 #include <errno.h>
 
 #include <zephyr/device.h>
-#include <zephyr/drivers/input/input_pmw3610.h>
+#include <zephyr/input/input_pmw3610.h>
 #include <zephyr/logging/log.h>
 
 #include <drivers/behavior.h>
@@ -103,5 +103,6 @@ static const struct behavior_driver_api behavior_pmw_cpi_driver_api = {
 
 BEHAVIOR_DT_INST_DEFINE(0, NULL, NULL, &behavior_pmw_cpi_data, NULL, POST_KERNEL,
                         CONFIG_KERNEL_INIT_PRIORITY_DEFAULT, &behavior_pmw_cpi_driver_api);
+
 
 
