@@ -2,6 +2,7 @@
  * Reenvio del trackball desde la mitad derecha (periferica) a la izquierda
  * (central). Ambos firmwares deben conocer el mismo zmk,input-split.
  */
+#include <input/processors.dtsi>
 
 / {
     behaviors {
@@ -25,6 +26,7 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_split>;
+        input-processors = <&zip_temp_layer 4 1000>;
     };
 };
 
