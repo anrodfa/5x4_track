@@ -12,6 +12,14 @@
         };
     };
 
+    input_processors {
+        pmw_temp_layer: pmw_temp_layer {
+            compatible = "zmk,input-processor-temp-layer";
+            #input-processor-cells = <2>;
+            require-prior-idle-ms = <200>;
+        };
+    };
+
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -26,7 +34,6 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_split>;
-        input-processors = <&zip_temp_layer 4 1000>;
+        input-processors = <&pmw_temp_layer 4 1000>;
     };
 };
-
