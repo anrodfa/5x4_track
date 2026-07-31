@@ -217,10 +217,10 @@ m/*
 //                          |     |     |     |   |      |    |     |
 // 4
                         bindings = <   
-   &none   &none       &none      &none           &msc SCRL_UP    &none     &pmwcpi 1 200    &none          &none           &none      &none           &none
-   &none   &none       &kp LC(X)  &kp LC(C)       &kp LC(V)       &none     &pmwcpi 0 1200   &mkp LCLK      &mkp MCLK       &mkp RCLK  &none           &none
-   &none   &kp LSHFT   &none      &none           &msc SCRL_DOWN  &none     &pmwcpi 2 200    &none          &none           &none      &kp LSHFT       &none
-                                  &trans          &trans          &kp LCTRL &trans  	     &trans         &trans
+   &none   &none       &none      &msc SCRL_UP    &msc SCRL_DOWN  &none     &pmwcpi 1 200    &none     &none  &none      &none           &none
+   &none   &none       &mkp RCLK  &mkp MCLK       &mkp LCLK       &none     &pmwcpi 0 1200   &none     &none  &none      &none           &none
+   &none   &kp LSHFT   &kp LC(X)  &kp LC(C)       &kp LC(V)       &none     &pmwcpi 2 200    &none     &none  &none      &kp LSHFT       &none
+                                  &trans          &trans          &kp LCTRL &trans  	     &trans    &trans
                         >;
                 };
         };
