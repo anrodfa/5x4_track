@@ -35,5 +35,23 @@
         status = "disabled";
         device = <&trackball_split>;
         input-processors = <&pmw_temp_layer 4 1000>;
+
+        /* Mientras la capa 5 (scroll_layer) este activa, el trackball deja de
+         * mover el cursor y genera rueda: Y -> WHEEL, X -> HWHEEL.
+         *
+         * El divisor del scroll_scaler marca cuantas cuentas del sensor hacen
+         * falta por cada "click" de rueda: mas alto = scroll mas lento. El
+         * scaler acumula el resto (track-remainders), asi que 1/12 no pierde
+         * movimiento. Maximo permitido para multiplicador y divisor: 16.
+         *
+         * process-next hace que ADEMAS se sigan aplicando los procesadores del
+         * nodo padre, para que pmw_temp_layer mantenga viva la capa 4 (raton)
+         * mientras se hace scroll y los clicks sigan disponibles.
+         */
+        scroller {
+            layers = <5>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 12>;
+            process-next;
+        };
     };
 };
