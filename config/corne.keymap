@@ -1,4 +1,4 @@
- /*
+ggggggggggg /*
  * Copyright (c) 2020 The ZMK Contributors
  * test
  * SPDX-License-Identifier: MIT
@@ -214,7 +214,7 @@
    &trans    &trans    &trans    &trans    &trans    &trans    	    &pmwcpi 1 200    &trans         &trans      &trans     &trans  &trans 
    &trans    &trans    &trans    &trans    &mo 5     &trans         &pmwcpi 0 1200   &mkp LCLK      &mkp MCLK   &mkp RCLK  &trans  &trans 
    &trans    &trans    &trans    &trans    &trans    &trans         &pmwcpi 2 200    &trans         &trans      &trans     &trans  &trans 
-                                 &trans    &tran     &trans         &trans  	        &trans         &trans
+                                 &trans    &trans    &trans         &trans  	        &trans         &trans
                         >;
                 };
                 scroll_layer {
