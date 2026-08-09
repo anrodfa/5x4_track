@@ -3,6 +3,7 @@
  * (central). Ambos firmwares deben conocer el mismo zmk,input-split.
  */
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 / {
     behaviors {
@@ -44,13 +45,21 @@
          * scaler acumula el resto (track-remainders), asi que 1/12 no pierde
          * movimiento. Maximo permitido para multiplicador y divisor: 16.
          *
+         * zip_scroll_transform invierte el sentido de la rueda vertical
+         * (INPUT_TRANSFORM_Y_INVERT -> WHEEL): bola hacia arriba = pagina hacia
+         * abajo. Va DESPUES del mapper porque el transform actua sobre
+         * WHEEL/HWHEEL, que es lo que el mapper acaba de generar. Para invertir
+         * tambien el horizontal: (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT).
+         *
          * process-next hace que ADEMAS se sigan aplicando los procesadores del
          * nodo padre, para que pmw_temp_layer mantenga viva la capa 4 (raton)
          * mientras se hace scroll y los clicks sigan disponibles.
          */
         scroller {
             layers = <5>;
-            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 12>;
+            input-processors = <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_scroll_scaler 1 12>;
             process-next;
         };
     };
