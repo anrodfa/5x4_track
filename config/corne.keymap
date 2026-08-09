@@ -194,7 +194,7 @@
                         bindings = <
  &none   &out OUT_USB    &none       &rgb_ug RGB_BRI     &none         &none                 &rgb_ug RGB_COLOR_HSB(180,100,2)  &kp F7   &kp F8  &kp F9  &kp F10  &none
  &none   &rgb_ug RGB_HUD &none       &rgb_ug RGB_BRD     &none         &none                 &rgb_ug RGB_COLOR_HSB(300,100,2)  &kp F4   &kp F5  &kp F6  &kp F11  &none
- &none   &bt0_rgb        &bt1_rgb    &bt2_rgb            &bt3_rgb      &bt4_rgb              &kp SEMI                          &kp F1   &kp F2  &kp F3  &kp F13  &none
+ &none   &bt0_rgb        &bt1_rgb    &bt2_rgb            &bt3_rgb      &bt4_rgb              &kp SEMI                          &kp F1   &kp F2  &kp F3  &kp F12  &none
                                            &bt BT_CLR        &trans         &rgb_ug RGB_TOG  &trans                            &trans   &trans
                         >;
                 };
@@ -205,16 +205,16 @@
 // |     |     |     |     |     |           |  SCRL_DN| SCRL_UP          |
 //                          |     |     |     |   |      |    |     |
 //
-// Posicion 17 (la de la G) = &mo 5 -> mantener pulsada convierte el trackball
+// Posicion 16 (la de la F) = &mo 5 -> mantener pulsada convierte el trackball
 // en rueda de scroll (ver scroll_layer y config/corne_trackball.dtsi).
 // Esta en la mitad izquierda a proposito: se sujeta con la izquierda mientras
 // la derecha mueve la bola.
 // 4
                         bindings = <   
-   &none   &none        &none      &none           &none      &none   &pmwcpi 1 200  &none     &msc SCRL_UP    &none     &none       &none
-   &none   &none        &kp LC(X)  &kp LC(C)       &kp LC(V)  &mo 5   &pmwcpi 0 1200 &mkp LCLK &mkp MCLK       &mkp RCLK &none       &none
-   &none   &kp LSHFT    &none      &none           &none      &none   &pmwcpi 2 200  &none     &msc SCRL_DOWN  &none     &kp LSHFT   &none
-                                   &trans          &trans     &trans  &trans   &trans      &trans
+   &trans    &trans    &trans    &trans    &trans    &trans    	    &pmwcpi 1 200    &trans         &trans      &trans     &trans  &trans 
+   &trans    &trans    &trans    &trans    &mo 5     &trans         &pmwcpi 0 1200   &mkp LCLK      &mkp MCLK   &mkp RCLK  &trans  &trans 
+   &trans    &trans    &trans    &trans    &trans    &trans         &pmwcpi 2 200    &trans         &trans      &trans     &trans  &trans 
+                                 &trans    &tran     &trans         &trans  	        &trans         &trans
                         >;
                 };
                 scroll_layer {
@@ -223,7 +223,7 @@
 // existe para que el input listener (config/corne_trackball.dtsi -> nodo "scroller")
 // detecte que esta activa y convierta el movimiento de la bola en scroll.
 //
-// Se activa manteniendo pulsada la posicion 17 (la de la G) en la capa 4 (raton).
+// Se activa manteniendo pulsada la posicion 16 (la de la F) en la capa 4 (raton).
 // Al ser todo &trans, mientras haces scroll siguen funcionando los clicks y demas
 // teclas de las capas 4 / 0 que haya debajo.
 // 5
