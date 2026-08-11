@@ -132,6 +132,19 @@
             #binding-cells = <0>;
             bindings = <&kp SEMI>; // Unicode para ñ
         };
+        /* Shift + boton central mantenidos. &mkp no acepta modificadores
+         * (&mkp LS(MCLK) no existe), asi que se hace con macro:
+         * macro_pause_for_release deja ambos pulsados hasta soltar la tecla.
+         * El orden importa: shift entra antes del click y sale despues. */
+        shift_mclk: shift_mclk {
+            compatible = "zmk,behavior-macro";
+            label = "SHIFT_MCLK";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &mkp MCLK>
+                , <&macro_pause_for_release>
+                , <&macro_release &mkp MCLK &kp LSHFT>;
+        };
     };
 };
 / {
@@ -209,11 +222,14 @@
 // en rueda de scroll (ver scroll_layer y config/corne_trackball.dtsi).
 // Esta en la mitad izquierda a proposito: se sujeta con la izquierda mientras
 // la derecha mueve la bola.
+//
+// Posicion 32 (justo debajo del MCLK) = &shift_mclk -> mantiene SHIFT + boton
+// central a la vez mientras la tengas pulsada (ver macro en behaviors).
 // 4
                         bindings = <   
    &trans    &trans    &trans    &trans    &trans    &trans    	    &pmwcpi 1 200    &trans         &trans      &trans     &trans  &trans 
    &trans    &trans    &trans    &trans    &mo 5     &trans         &pmwcpi 0 1200   &mkp LCLK      &mkp MCLK   &mkp RCLK  &trans  &trans 
-   &trans    &trans    &trans    &trans    &trans    &trans         &pmwcpi 2 200    &trans         &trans      &trans     &trans  &trans 
+   &trans    &trans    &trans    &trans    &trans    &trans         &pmwcpi 2 200    &trans         &shift_mclk &trans     &trans  &trans
                                  &trans    &trans    &trans         &trans  	        &trans         &trans
                         >;
                 };
